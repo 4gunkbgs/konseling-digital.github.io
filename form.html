@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Digital Konseling</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>Form Digital Konseling</h1>
+    </header>
+
+    <main class="min-h-70">
+      <section class="pad-v-20">
+        <div class="wrapper">
+          <div class="petunjuk pad-v-20">
+            <iframe
+              src="https://docs.google.com/forms/d/e/1FAIpQLSfnA86P8YVBlUfQeXsBblHEGhLyVn096xzHjiQY-6L3mBrlig/viewform"
+              width="100%"
+              height="600"
+              frameborder="0"
+              marginheight="0"
+              marginwidth="0"
+              >Memuat…
+            </iframe>
+          </div>
+
+          <div class="button-wrapper-multi-outer pad-m-10">
+            <div class="button-wrapper-multi">
+              <a
+                href="https://docs.google.com/spreadsheets/d/1D2dtZb2n8BtDyGJj0ommFmgSIjbMarKnQpemo3YABS8/edit?resourcekey#gid=391078385"
+                class="button-form"
+              >
+                Lihat Hasil Konseling
+              </a>
+              <a
+                href="https://drive.google.com/drive/folders/1c_HtC1j6KX5n6GQqSOrnUc0h78Hn88BH?usp=drive_link"
+                class="button-form"
+              >
+                Digital Konseling Depresi
+              </a>
+              <a
+                href="https://drive.google.com/drive/folders/1cZwjphcIB-3jP_i3b9dl70yi3LeqhwOA?usp=drive_link"
+                class="button-form"
+              >
+                Digital Konseling Resiliensi
+              </a>
+              <a
+                href="https://drive.google.com/drive/folders/1GRUlVNEdFpd9tyPkY6Nksy297H7I7roB?usp=drive_link"
+                class="button-form"
+              >
+                Analisis Hasil
+              </a>
+              <a
+                href="https://drive.google.com/drive/folders/1c_vpY7_Vo0LZmK0hpjb2g9sk6HyBhkf9?usp=drive_link"
+                class="button-form"
+              >
+                Arsip
+              </a>
+              <a
+                href="https://drive.google.com/uc?export=download&id=1eSbeKHhjmd9ZL1rL_HFkaWjznFRrdmy4"
+                >Download</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="data"></section>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 Digital Konseling. All rights reserved.</p>
+    </footer>
+
+    <script>
+      fetch("depresi_data.csv") // api for the get request
+        .then(function (response) {
+          // Convert to TEXT
+          return response.text();
+        })
+        .then(function (csv_text) {
+          // create object from csv text
+          return processData(csv_text);
+        })
+        .then(function (processed_data) {
+          // create object from csv text
+          console.log(processed_data);
+        })
+        .catch(function (error) {
+          console.log("Request failed", error);
+        });
+
+      function processData(allText) {
+        var record_num = 23; // or however many elements there are in each row
+        var allTextLines = allText.split(/\r\n|\n/);
+        var headings = allTextLines.shift().split(",");
+        var lines = [];
+        // debugger;
+        for (let idx = 0; idx < allTextLines.length; idx++) {
+          let line_object = {};
+          const current_line_data = allTextLines[idx].split(",");
+          for (
+            let heading_idx = 0;
+            heading_idx < headings.length;
+            heading_idx++
+          ) {
+            line_object[headings[heading_idx]] = current_line_data[heading_idx];
+          }
+          lines.push(line_object);
+        }
+        return lines;
+      }
+    </script>
+  </body>
+</html>

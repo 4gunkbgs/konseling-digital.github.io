@@ -1,0 +1,185 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    /* Warna latar belakang yang lembut */
+}
+
+header {
+    background-color: #3498db;
+    /* Warna header */
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+}
+
+.main-content {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+    width: 100%;
+}
+
+#button-container {
+    justify-content: space-between;
+    width: 400px;
+    /* Sesuaikan lebar container dengan jumlah tombol */
+}
+
+.custom-button {
+    padding: 10px;
+    width: 70px;
+    /* Sesuaikan lebar tombol */
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button-buttom {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.petunjuk {
+    width: 700px;
+    background-color: #fff;
+    border-radius: 10px;
+    text-align: justify;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 18px;
+}  
+
+.button-wrapper {
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-form {
+    color: #fff;
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.5;
+    /* color: #212529; */
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    /* cursor: pointer; */
+    /* -webkit-user-select: none; */
+    -moz-user-select: none;
+    user-select: none;
+    /* background-color: transparent; */
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    border-radius: .25rem;
+}
+
+.pad-v-20 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.pad-v-10 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.pad-h-10 {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.min-h-70 {
+    min-height: 70vh;
+}
+
+.mar-h-10 {
+    margin-left: 20px;
+    margin-right: 20px;
+
+}
+.mar-v-10 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.button-wrapper-multi {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.button-wrapper-multi-outer {
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* make image size  */
+.img-size-1 {
+    width: 500px;
+
+}
+
+.img-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 600px){
+    .wrapper {
+        display: block;
+    }
+
+    .button-wrapper {
+        padding-top: 20px;
+        width: 100%;
+    }
+
+    .button-wrapper-multi-outer {
+        padding-top: 20px;
+        width: 100%;
+    }
+
+    .petunjuk {
+        width: 100%;
+    }
+
+    .min-h-70 {
+        min-height: 80vh;
+    
+    }
+
+    .pad-m-10 {
+        padding: 10px;
+    }
+}
+
+
+/* Tambahkan lebih banyak gaya sesuai kebutuhan Anda */
